@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 05</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🗃️ SALA 05 — ARQUIVO</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Finalmente, dados.<br>
+                Muitos dados.<br>
+                <strong>Muitos. Dados.</strong></p>
+                <p>O sistema armazenou várias informações, mas apenas algumas interessam para abrir a próxima porta.</p>
+                <p><strong>Encontre os números certos e descubra o código.</strong></p>
+                <p><em>Parabéns. Você acaba de descobrir por que cientistas de dados gostam de listas.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">numeros = [
+    4, 7, 2, 9, 5, 12, 3, 8, 15, 6,
+    11, 10, 1, 14, 13, 18, 21, 16, 7, 20,
+    25, 3, 17, 22, 9, 24, 6, 19, 11, 23,
+    58, 7, 89, 32, 45, 88, 1, 29, 13, 8,
+    7, 10, 25, 38, 89, 100, 105, 20, 36,
+    98, 111, 2, 9, 54, 66, 26, 12, 32
+]
+
+codigo = numeros[2] + numeros[35] + numeros[29]
+
+print(codigo)
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="111">111</button>
+                <button type="submit" name="resposta" value="113">113</button>
+                <button type="submit" name="resposta" value="57">57</button>
+                <button type="submit" name="resposta" value="151">151</button>
+            </form>
+        </div>
+    </main>
+</body>

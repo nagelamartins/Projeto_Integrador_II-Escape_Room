@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 03</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🚦 SALA 03 — ACESSO RESTRITO</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Esta porta é inteligente.<br>
+                Ela toma decisões.<br>
+                Ao contrário de certas pessoas que eu poderia mencionar.</p>
+                <p>O sistema recebeu uma senha e precisa decidir se você pode passar.</p>
+                <p><strong>Descubra qual caminho o programa irá seguir.</strong></p>
+                <p><em>Boa sorte. Eu não posso abrir a porta por você. Tecnicamente, posso. Mas isso acabaria com a graça.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">senha = 17
+
+if senha > 20:
+    print("VERMELHO")
+else:
+    print("AZUL")
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="AZUL">AZUL</button>
+                <button type="submit" name="resposta" value="VERMELHO">VERMELHO</button>
+                <button type="submit" name="resposta" value="ERRO">ERRO</button>
+                <button type="submit" name="resposta" value="17">17</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window">
+            <h1>[ NOVA PESSOA INVESTIGADORA // CADASTRO ]</h1>
+
+            <form action="/cadastro" method="POST">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <label for="confirmar_senha">Confirmar senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+
+                <button type="submit">[ REGISTRAR PESSOA INVESTIGADORA ]</button>
+            </form>
+
+            <a href="/">Já tem conta? Fazer login</a>
+        </div>
+    </main>
+</body>
+</html>

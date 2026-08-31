@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 06</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>⏳ SALA 06 — CONTAGEM REGRESSIVA</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Ah. Uma contagem regressiva.<br>
+                <strong>10... 8... 6... 4... 2...</strong></p>
+                <p>Mas não se distraia com o contador.<br>
+                Enquanto ele diminui, o sistema está acumulando alguma coisa.<br>
+                E, aparentemente, decidiu chamar isso de <strong>"código"</strong>.</p>
+                <p><strong>Descubra o código antes que eu precise fingir que estou preocupado.</strong></p>
+                <p><em>Dica: observe o que acontece com as duas variáveis.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">contador = 10
+codigo = 0
+
+while contador > 0:
+    codigo += contador
+    contador -= 2
+
+print(codigo)
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="20">20</button>
+                <button type="submit" name="resposta" value="3">3</button>
+                <button type="submit" name="resposta" value="30">30</button>
+                <button type="submit" name="resposta" value="0">0</button>
+            </form>
+        </div>
+    </main>
+</body>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 09</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🗄️ SALA 09 — COFRE DOS AGENTES</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Quatro agentes.<br>
+                Quatro identificações.<br>
+                Mas apenas os que possuem autorização suficiente podem contribuir para o código do cofre.<br>
+                O sistema vai verificar cada agente e, quando encontrar alguém que atenda ao critério, vai adicionar sua identificação ao código.</p>
+                <p><strong>Descubra qual será o código final do cofre.</strong></p>
+                <p><em>Dica: não basta descobrir quem foi selecionado. Preste atenção no que o sistema faz com os números.</em></p>
+                <p>Você está quase lá.<br>
+                Ou pelo menos é isso que eu fui programado para dizer.</p>
+            </div>
+
+            <pre class="codigo-bloco">agentes = {
+    "Alice": 7,
+    "Bruno": 12,
+    "Clara": 5,
+    "Daniela": 9
+}
+
+codigo = 0
+
+for nome, numero in agentes.items():
+    if numero > 8:
+        codigo += numero
+
+print(codigo)
+
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="22">22</button>
+                <button type="submit" name="resposta" value="21">21</button>
+                <button type="submit" name="resposta" value="26">26</button>
+                <button type="submit" name="resposta" value="29">29</button>
+            </form>
+        </div>
+    </main>
+</body>

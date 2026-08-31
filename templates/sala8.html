@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 08</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🕵️ SALA 08 — NÚMEROS SUSPEITOS</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Temos uma lista de números.<br>
+                Alguns são pares.<br>
+                Alguns são ímpares.<br>
+                E, aparentemente, alguns deles são importantes.</p>
+                <p>O sistema possui uma regra para decidir quais números entram no código.</p>
+                <p><strong>Descubra quais números foram selecionados.</strong></p>
+                <p><em>Sim, números podem ser suspeitos. Neste lugar, qualquer coisa pode.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">numeros = [3, 8, 11, 4, 15, 6]
+codigo = 0
+
+for numero in numeros:
+    if numero % 2 == 0:
+        codigo += numero
+
+print(codigo)
+
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="19">19</button>
+                <button type="submit" name="resposta" value="81">81</button>
+                <button type="submit" name="resposta" value="18">18</button>
+                <button type="submit" name="resposta" value="25">25</button>
+            </form>
+        </div>
+    </main>
+</body>

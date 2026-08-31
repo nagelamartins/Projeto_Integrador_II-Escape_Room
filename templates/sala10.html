@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 10</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🔐 SALA 10 — ACESSO FINAL</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Parabéns.<br>
+                Você chegou à última sala.<br>
+                Eu gostaria de dizer que esta parte será fácil.<br>
+                ...<br>
+                Não será.</p>
+                <p>Você encontrará aqui tudo o que aprendeu até agora.<br>
+                Funções. Listas. Condições. Loops. Dicionários.<br>
+                Desta vez, nenhuma habilidade ficará para trás.</p>
+                <p><strong>Descubra o código final.</strong></p>
+                <p>E, pessoa investigadora...<br>
+                <strong>se você errar, eu não vou julgar.</strong><br>
+                ...<br>
+                Muito.</p>
+                <p><em>Dica: Observe o que cada sala guarda e o que a função recebe. Talvez exista uma conexão aí.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">def calcular_codigo(numeros):
+    codigo = 0
+
+    for numero in numeros:
+        if numero % 2 == 0:
+            codigo += numero * 2
+        else:
+            codigo += numero
+
+    return codigo
+
+
+salas = {
+    "sala1": [3, 8],
+    "sala2": [5, 4],
+    "sala3": [7, 6]
+}
+
+senha = 0
+
+for sala, numeros in salas.items():
+    codigo = calcular_codigo(numeros)
+    senha += codigo
+
+print(senha)
+
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="61">61</button>
+                <button type="submit" name="resposta" value="71">71</button>
+                <button type="submit" name="resposta" value="51">51</button>
+                <button type="submit" name="resposta" value="29">29</button>
+            </form>
+        </div>
+    </main>
+</body>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 07</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>⚙️ SALA 07 — MÁQUINA MISTERIOSA</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Esta máquina faz uma coisa muito específica.<br>
+                Você entrega um número.<br>
+                Ela trabalha.<br>
+                E devolve outro.</p>
+                <p>Não faça perguntas sobre o que acontece lá dentro. Nem eu sei.</p>
+                <p><strong>Descubra o resultado produzido pela máquina.</strong></p>
+                <p><em>Tecnicamente, isso é uma função. Mas "máquina misteriosa" é mais divertido.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">def decifrar(numero):
+    numero = numero * 2
+    numero = numero + 5
+    return numero
+
+codigo = decifrar(7)
+
+print(codigo)
+
+            </pre>
+
+            
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="19">19</button>
+                <button type="submit" name="resposta" value="20">20</button>
+                <button type="submit" name="resposta" value="29">29</button>
+                <button type="submit" name="resposta" value="30">30</button>
+            </form>
+        </div>
+    </main>
+</body>

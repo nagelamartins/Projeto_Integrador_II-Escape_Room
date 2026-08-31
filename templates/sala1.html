@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 01</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🚪 SALA 01 — TERMINAL</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Ah. Você chegou.</p>
+                <p>Vamos começar com algo simples. Afinal, seria constrangedor se você não conseguisse passar da primeira porta.</p>
+                <p>O terminal está executando um pequeno cálculo.</p>
+                <p><strong>Qual será o resultado?</strong></p>
+                <p><em>Dica: eu prometo que não é pegadinha.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">a = 8
+b = 4
+c = 2
+
+codigo = a + b * c
+
+print(codigo)</pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="16">16</button>
+                <button type="submit" name="resposta" value="24">24</button>
+                <button type="submit" name="resposta" value="14">14</button>
+                <button type="submit" name="resposta" value="20">20</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

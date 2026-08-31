@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 04</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🔢 SALA 04 — PAINEL NUMÉRICO</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Temos um problema.<br>
+                O painel está contando.<br>
+                1...<br>
+                2...<br>
+                3...</p>
+                <p>Ele pretende continuar assim até você descobrir o que está acontecendo.</p>
+                <p><strong>Observe o código e descubra o número final.</strong></p>
+                <p><em>Bom, pelo menos você não precisa contar até o infinito.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">codigo = 0
+
+for numero in range(1, 6):
+    codigo = codigo + numero
+
+print(codigo)
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="25">25</button>
+                <button type="submit" name="resposta" value="14">14</button>
+                <button type="submit" name="resposta" value="0">0</button>
+                <button type="submit" name="resposta" value="15">15</button>
+            </form>
+        </div>
+    </main>
+</body>

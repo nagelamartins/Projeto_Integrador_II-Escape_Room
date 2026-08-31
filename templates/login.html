@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window">
+            <h1>[ TERMINAL // C.O.D.E. v1.0 ]</h1>
+
+            <form action="/" method="POST">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit">[ ACESSAR SISTEMA ]</button>
+
+                {% if erro %}
+                    <p class="erro">{{ erro }}</p>
+                {% endif %}
+            </form>
+
+            <a href="/cadastro">Ainda não tem conta? Cadastre-se</a>
+        </div>
+    </main>
+</body>
+</html>

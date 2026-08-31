@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sistema Iniciado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>◼ SISTEMA INICIADO</h1>
+
+            <div class="narrativa">
+                <p>Olá, pessoa investigadora! Meu nome é <strong>C.O.D.E.— Central Operacional de Decodificação e Escape</strong>, e eu vou te acompanhar nessa investigação até a saída. Ou até onde você conseguir chegar.</p>
+
+                <p>Você está atualmente em uma instalação de testes.<br>
+                As portas foram trancadas.<br>
+                Não há saída visível.</p>
+
+                <p>Mas não entre em pânico. <strong>Eu tenho um plano.</strong><br>
+                    Na verdade, eu tenho <strong>dez</strong>.</p>
+
+                <p>Cada porta possui um desafio de lógica. Resolva-os e eu liberarei o próximo acesso.</p>
+
+                <p>E, por favor, não tente quebrar a porta.<br>
+                 <strong>Ela é mais cara que você.</strong></p>
+            </div>
+
+            <form action="/sala1" method="GET">
+                <button type="submit">[ INICIAR INVESTIGAÇÃO ]</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

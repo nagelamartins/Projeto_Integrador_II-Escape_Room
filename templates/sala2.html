@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>C.O.D.E. // Sala 02</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="terminal-window tema-claro">
+            <h1>🧩 SALA 02 — MENSAGEM OCULTA</h1>
+
+            {% if erro %}
+                <p class="erro">{{ erro }}</p>
+            {% endif %}
+
+            <div class="narrativa">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Interessante.<br>
+                Você passou.<br>
+                Eu tinha uma aposta de 73% de que não passaria. Mas tudo bem, toda estatística tem sua margem de erro.</p>
+                <p>Nesta sala, uma mensagem está escondida dentro de uma palavra.</p>
+                <p><strong>Descubra o código oculto.</strong></p>
+                <p><em>E lembre-se: Python começa a contar do zero. Não pergunte por quê. Ele simplesmente gosta de complicar as coisas.</em></p>
+            </div>
+
+            <pre class="codigo-bloco">palavra = "PYTHON"
+
+codigo = palavra[1] + palavra[4] + palavra[0]
+
+print(codigo)
+            </pre>
+
+
+            <form method="POST" class="opcoes">
+                <button type="submit" name="resposta" value="PTH">PTH</button>
+                <button type="submit" name="resposta" value="YON">YON</button>
+                <button type="submit" name="resposta" value="YOP">YOP</button>
+                <button type="submit" name="resposta" value="PTN">PTN</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
