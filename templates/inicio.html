@@ -13,17 +13,16 @@
             <div class="narrativa">
                 <p>Olá, pessoa investigadora! Meu nome é <strong>C.O.D.E.— Central Operacional de Decodificação e Escape</strong>, e eu vou te acompanhar nessa investigação até a saída. Ou até onde você conseguir chegar.</p>
 
-                <p>Você está atualmente em uma instalação de testes.<br>
-                As portas foram trancadas.<br>
-                Não há saída visível.</p>
+                <p>Você está atualmente em uma instalação de testes.</p>
+                <p>As portas foram trancadas. Não há saída visível.</p>
 
-                <p>Mas não entre em pânico. <strong>Eu tenho um plano.</strong><br>
-                    Na verdade, eu tenho <strong>dez</strong>.</p>
+                <p>Mas não entre em pânico. <strong>Eu tenho um plano.</strong></p>
+                <p>Na verdade, eu tenho <strong>dez</strong>.</p>
 
                 <p>Cada porta possui um desafio de lógica. Resolva-os e eu liberarei o próximo acesso.</p>
 
-                <p>E, por favor, não tente quebrar a porta.<br>
-                 <strong>Ela é mais cara que você.</strong></p>
+                <p>E, por favor, não tente quebrar a porta.</p>
+                <p><strong>Ela é mais cara que você.</strong></p>
             </div>
 
             <form action="/sala1" method="GET">
@@ -31,5 +30,9 @@
             </form>
         </div>
     </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        efeitoDigitacao(".narrativa");
+    </script>
 </body>
 </html>
