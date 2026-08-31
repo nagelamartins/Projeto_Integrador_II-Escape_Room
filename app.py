@@ -32,6 +32,12 @@ class Usuario(db.Model):
     nome_usuario = db.Column(db.String(50), unique=True, nullable=False)
     senha = db.Column(db.String(200), nullable=False)
 
+class Desempenho(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
+    sala = db.Column(db.Integer, nullable=False)
+    acertou_de_primeira = db.Column(db.Boolean, nullable=False)
+
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -87,8 +93,21 @@ def sala1():
         resposta = request.form["resposta"]
 
         if resposta == "16":
+            acertou_de_primeira = not session.get("errou_sala1", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=1,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala1", None)
+
             return redirect(url_for("sala2"))
         else:
+            session["errou_sala1"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala1.html", erro=erro)
@@ -104,8 +123,21 @@ def sala2():
         resposta = request.form["resposta"]
 
         if resposta == "YOP":
+            acertou_de_primeira = not session.get("errou_sala2", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=2,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala2", None)
+
             return redirect(url_for("sala3"))
         else:
+            session["errou_sala2"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala2.html", erro=erro)    
@@ -121,8 +153,21 @@ def sala3():
         resposta = request.form["resposta"]
 
         if resposta == "AZUL":
+            acertou_de_primeira = not session.get("errou_sala3", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=3,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala3", None)
+
             return redirect(url_for("sala4"))
         else:
+            session["errou_sala3"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala3.html", erro=erro)    
@@ -138,8 +183,21 @@ def sala4():
         resposta = request.form["resposta"]
 
         if resposta == "15":
+            acertou_de_primeira = not session.get("errou_sala4", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=4,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala4", None)
+
             return redirect(url_for("sala5"))
         else:
+            session["errou_sala4"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala4.html", erro=erro)  
@@ -155,8 +213,21 @@ def sala5():
         resposta = request.form["resposta"]
 
         if resposta == "113":
+            acertou_de_primeira = not session.get("errou_sala5", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=5,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala5", None)
+
             return redirect(url_for("sala6"))
         else:
+            session["errou_sala5"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala5.html", erro=erro)  
@@ -172,8 +243,21 @@ def sala6():
         resposta = request.form["resposta"]
 
         if resposta == "30":
+            acertou_de_primeira = not session.get("errou_sala6", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=6,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala6", None)
+
             return redirect(url_for("sala7"))
         else:
+            session["errou_sala6"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala6.html", erro=erro) 
@@ -189,8 +273,21 @@ def sala7():
         resposta = request.form["resposta"]
 
         if resposta == "19":
+            acertou_de_primeira = not session.get("errou_sala7", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=7,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala7", None)
+
             return redirect(url_for("sala8"))
         else:
+            session["errou_sala7"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala7.html", erro=erro) 
@@ -206,8 +303,21 @@ def sala8():
         resposta = request.form["resposta"]
 
         if resposta == "18":
+            acertou_de_primeira = not session.get("errou_sala8", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=8,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala8", None)
+
             return redirect(url_for("sala9"))
         else:
+            session["errou_sala8"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala8.html", erro=erro) 
@@ -223,8 +333,21 @@ def sala9():
         resposta = request.form["resposta"]
 
         if resposta == "21":
+            acertou_de_primeira = not session.get("errou_sala9", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=9,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala9", None)
+
             return redirect(url_for("sala10"))
         else:
+            session["errou_sala9"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala9.html", erro=erro) 
@@ -240,8 +363,21 @@ def sala10():
         resposta = request.form["resposta"]
 
         if resposta == "51":
+            acertou_de_primeira = not session.get("errou_sala10", False)
+
+            registro = Desempenho(
+                usuario_id=session["usuario_id"],
+                sala=10,
+                acertou_de_primeira=acertou_de_primeira
+            )
+            db.session.add(registro)
+            db.session.commit()
+
+            session.pop("errou_sala10", None)
+
             return redirect(url_for("fim"))
         else:
+            session["errou_sala10"] = True
             erro = random.choice(mensagens_erro)
 
     return render_template("sala10.html", erro=erro) 
