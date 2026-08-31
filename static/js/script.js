@@ -12,6 +12,9 @@ function configurarConfirmacao(mensagem) {
 
 function efeitoDigitacao(seletor, velocidade = 25) {
     const container = document.querySelector(seletor);
+
+    container.style.minHeight = container.offsetHeight + "px";
+
     const paragrafos = container.querySelectorAll("p");
 
     const textosOriginais = [];
