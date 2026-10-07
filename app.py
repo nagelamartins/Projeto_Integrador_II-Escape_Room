@@ -39,6 +39,9 @@ class Desempenho(db.Model):
     sala = db.Column(db.Integer, nullable=False)
     acertou_de_primeira = db.Column(db.Boolean, nullable=False)
 
+with app.app_context():
+    db.create_all()
+
 
 @app.route("/", methods=["GET", "POST"])
 def login():
