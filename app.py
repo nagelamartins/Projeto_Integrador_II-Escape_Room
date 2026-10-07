@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 import random
+import os
 
 mensagens_erro = [
     "Acesso negado. Mas gostei da confiança.",
@@ -22,7 +23,7 @@ mensagens_erro = [
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///escaperoom.db"
-app.secret_key = "uma_frase_qualquer_dificil_de_adivinhar"
+app.secret_key = os.environ.get("SECRET_KEY", "uma_frase_qualquer_dificil_de_adivinhar")
 
 db = SQLAlchemy(app)
 
