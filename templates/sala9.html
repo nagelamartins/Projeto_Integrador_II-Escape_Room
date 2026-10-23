@@ -14,6 +14,8 @@
                 <p class="erro">{{ erro }}</p>
             {% endif %}
 
+            <button type="button" id="botao-dica">[ DICA ]</button>
+
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
                 <p>Quatro agentes.<br>
@@ -50,12 +52,20 @@ print(codigo)
                 <button type="submit" name="resposta" value="26">26</button>
                 <button type="submit" name="resposta" value="29">29</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Só entram no código os valores maiores que 8. Os nomes não contam, apenas os números.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: Essa alternativa mesmo? Tem certeza?");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>
 </body>
 </html>

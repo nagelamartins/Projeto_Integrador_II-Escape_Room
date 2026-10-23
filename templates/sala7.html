@@ -14,6 +14,8 @@
                 <p class="erro">{{ erro }}</p>
             {% endif %}
 
+            <button type="button" id="botao-dica">[ DICA ]</button>
+
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
                 <p>Esta máquina faz uma coisa muito específica.<br>
@@ -44,12 +46,20 @@ print(codigo)
                 <button type="submit" name="resposta" value="29">29</button>
                 <button type="submit" name="resposta" value="30">30</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>O 7 entra na função, vira numero, e é alterado linha por linha. Acompanhe o valor de numero até o return.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: A máquina fez o trabalho dela. Agora é sua vez de confiar no resultado. Ou não.");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>
 </body>
 </html>

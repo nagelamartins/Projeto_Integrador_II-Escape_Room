@@ -14,6 +14,8 @@
                 <p class="erro">{{ erro }}</p>
             {% endif %}
 
+            <button type="button" id="botao-dica">[ DICA ]</button>
+
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
                 <p>Finalmente, dados.<br>
@@ -45,12 +47,20 @@ print(codigo)
                 <button type="submit" name="resposta" value="57">57</button>
                 <button type="submit" name="resposta" value="151">151</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>A lista está em linhas de 10 números. A primeira linha vai do índice 0 ao 9, a segunda do 10 ao 19, e assim por diante. Use isso para achar cada posição sem contar um por um.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: Tantos números, uma resposta só. Tem certeza que essa é a certa?");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>
 </body>
 </html>

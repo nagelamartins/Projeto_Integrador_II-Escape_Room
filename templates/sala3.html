@@ -13,6 +13,8 @@
             {% if erro %}
                 <p class="erro">{{ erro }}</p>
             {% endif %}
+            
+            <button type="button" id="botao-dica">[ DICA ]</button>
 
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
@@ -39,12 +41,20 @@ else:
                 <button type="submit" name="resposta" value="ERRO">ERRO</button>
                 <button type="submit" name="resposta" value="17">17</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Só um dos caminhos será executado. Pergunte: 17 é maior que 20? Se sim, vale o if. Se não, vale o else.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: O sistema decidiu um caminho. Você também já decidiu o seu? Confirma.");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>
 </body>
 </html>

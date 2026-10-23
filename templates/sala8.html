@@ -14,6 +14,8 @@
                 <p class="erro">{{ erro }}</p>
             {% endif %}
 
+            <button type="button" id="botao-dica">[ DICA ]</button>
+
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
                 <p>Temos uma lista de números.<br>
@@ -43,12 +45,20 @@ print(codigo)
                 <button type="submit" name="resposta" value="18">18</button>
                 <button type="submit" name="resposta" value="25">25</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>% 2 == 0 é o teste de número par (resto 0 na divisão por 2). Passe por cada número e some só os que passam no teste.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: Última chance de reconsiderar. Depois não adianta reclamar comigo.");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>
 </body>
 </html>

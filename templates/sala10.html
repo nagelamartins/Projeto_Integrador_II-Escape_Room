@@ -14,6 +14,8 @@
                 <p class="erro">{{ erro }}</p>
             {% endif %}
 
+            <button type="button" id="botao-dica">[ DICA ]</button>
+
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
                 <p>Parabéns.<br>
@@ -67,12 +69,20 @@ print(senha)
                 <button type="submit" name="resposta" value="51">51</button>
                 <button type="submit" name="resposta" value="29">29</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>Resolva uma sala por vez: pegue a lista, aplique a regra da função em cada número (par e ímpar são tratados de formas diferentes) e guarde o resultado. No fim, some os três resultados.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: Essa é sua resposta final? Interessante.");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>
 </body>
 </html>

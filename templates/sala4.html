@@ -14,6 +14,8 @@
                 <p class="erro">{{ erro }}</p>
             {% endif %}
 
+            <button type="button" id="botao-dica">[ DICA ]</button>
+
             <div class="narrativa">
                 <p><strong>C.O.D.E.:</strong></p>
                 <p>Temos um problema.<br>
@@ -41,12 +43,20 @@ print(codigo)
                 <button type="submit" name="resposta" value="0">0</button>
                 <button type="submit" name="resposta" value="15">15</button>
             </form>
+            <dialog id="janela-dica">
+                <p><strong>C.O.D.E.:</strong></p>
+                <p>O range(1, 6) começa em 1 e para antes do 6. Veja quais números o numero vai assumir e some um de cada vez.</p>
+                <form method="dialog">
+                    <button>[ FECHAR ]</button>
+                </form>
+            </dialog>
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         configurarConfirmacao("C.O.D.E.: Antes de confirmar: já checou duas vezes? Eu, particularmente, não confio em ninguém que só checa uma.");
         efeitoDigitacao(".narrativa");
+        configurarDica();
     </script>    
 </body>
 </html>

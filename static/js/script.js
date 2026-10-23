@@ -46,3 +46,12 @@ function efeitoDigitacao(seletor, velocidade = 25) {
 
     digitarProximaLetra();
 }
+
+function configurarDica() {
+    const botao = document.querySelector("#botao-dica");
+    const janela = document.querySelector("#janela-dica");
+
+    botao.addEventListener("click", function () {
+        janela.showModal();
+    });
+}
